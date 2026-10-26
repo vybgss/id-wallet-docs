@@ -383,6 +383,7 @@ p {
 .button-row {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 12px;
 }
 
@@ -1161,4 +1162,47 @@ p {
     border: 0;
     background: none;
   }
+}
+
+/* Official App Store badge (Apple Marketing Tools artwork, not redrawn). */
+
+.app-store-badge {
+  display: inline-flex;
+  border-radius: 9px;
+  transition: transform 0.2s ease;
+}
+
+.app-store-badge:hover {
+  text-decoration: none;
+}
+
+.app-store-badge:active {
+  transform: scale(0.97);
+}
+
+.app-store-badge img {
+  display: block;
+  width: auto;
+  height: 50px;
+}
+
+.cta {
+  text-align: center;
+}
+
+.cta .app-icon {
+  width: 88px;
+  height: 88px;
+}
+
+.cta h2 {
+  margin: 22px 0 10px;
+  font-size: clamp(32px, 5vw, 46px);
+  font-weight: 800;
+}
+
+.cta p {
+  margin-bottom: 24px;
+  font-size: 19px;
+  color: var(--text-2);
 }
