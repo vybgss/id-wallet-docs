@@ -55,7 +55,7 @@
   <body>
     <h1>ID Wallet - Privacy Policy</h1>
 
-    <p class="last-updated"><strong>Last updated: October 18, 2025</strong></p>
+    <p class="last-updated"><strong>Last updated: October 26, 2026</strong></p>
 
     <p>
       We respect your privacy
@@ -69,22 +69,32 @@
     <p>
       <strong>ID Wallet</strong> does not require you to create an account or provide any
       personally identifiable information such as your name, email address, or phone number.
-      All card data (including titles, QR codes, expiration dates, locations, and colors)
-      is stored locally on your device.
+      Your card data (including titles, QR code and barcode contents, code formats, expiration
+      dates, locations, colors, and icons) is stored in your own iCloud account and synced to
+      your devices that are signed in to the same Apple Account. We do not have access to it.
     </p>
     <p>
-      When you choose to export a card to Apple Wallet, your card data (title, QR code content,
-      expiration date, location, and color) is transmitted to our backend server solely for the
-      purpose of generating and digitally signing the Apple Wallet pass. This is required by
-      Apple's PassKit framework to create valid wallet passes.
+      Some information never leaves the device where it is created: when you last opened each
+      card (used to sort cards by recent use and to choose the cards shown in widgets), the
+      Apple Wallet exports you have purchased but not used yet (export credits), and your app
+      settings. This information is not synced to your other devices and is never sent to us.
+    </p>
+    <p>
+      When you choose to export a card to Apple Wallet, your card data (title, code content and
+      format, expiration date, location coordinates, color, and a random identifier the app
+      creates for the card) is transmitted to our backend server solely for the purpose of
+      generating and digitally signing the Apple Wallet pass. This is required by Apple's
+      PassKit framework to create valid wallet passes. The request does not include your name,
+      your Apple Account, or any device identifier.
     </p>
 
     <h2>2. Usage Data</h2>
     <p>
-      We may collect non-personally identifiable data related to the performance and usage 
-      of the app (such as crash logs or error reports) through Apple’s built-in analytics 
-      or other trusted frameworks. This data helps us improve app reliability and enhance 
-      user experience. No personally identifiable information is included in this data.
+      <strong>ID Wallet</strong> does not contain analytics, advertising, or tracking code and
+      does not collect usage data itself. If you have chosen to share analytics with app
+      developers in your device settings, Apple may provide us with crash reports and
+      aggregated usage statistics for the app. This data helps us improve app reliability and
+      does not include personally identifiable information.
     </p>
 
     <h2>3. Permissions</h2>
@@ -93,13 +103,22 @@
       specific features:
     </p>
     <ul style="list-style-type: disc; padding-left: 20px;">
-      <li><strong>Camera Access:</strong> Used only for scanning QR codes when you choose
-      the "Scan" option. No photos or videos are stored or transmitted.</li>
-      <li><strong>Photo Library Access:</strong> Used only to import images containing QR
-      codes when you choose the "Import" option. We only access images you explicitly select.</li>
+      <li><strong>Camera Access:</strong> Used only for scanning QR codes and barcodes when you
+      choose the "Scan" option. Codes are recognized on your device; no photos or videos are
+      stored or transmitted.</li>
+      <li><strong>Photos:</strong> When you choose to import a code from a photo, you select
+      the photo in Apple's photo picker. The app receives only the photo you select, reads the
+      code from it on your device, and does not keep the photo. It does not access the rest of
+      your photo library.</li>
       <li><strong>Location Services (When In Use):</strong> Used only when you choose to add
-      a location to a card for lock screen relevance. Location data is stored locally and
-      included only in passes you export to Apple Wallet.</li>
+      a location to a card for lock screen relevance, to show your current position on the
+      map. The place you choose (its name and coordinates) is saved with the card and synced
+      through iCloud like the rest of the card. Its coordinates are included only in passes you
+      export to Apple Wallet. The app does not track your location in the background.</li>
+      <li><strong>Notifications:</strong> Used for expiry reminders three days before and on
+      the day a card expires. Reminders are scheduled on your device and show the card's
+      title; no notification server is involved. You can turn them off in the app's
+      settings.</li>
     </ul>
     <p>
       You can use the app without granting these permissions. Denying permissions will only
@@ -126,20 +145,48 @@
     <h2>5. Third-Party Services</h2>
     <p>
       <strong>ID Wallet</strong> does not integrate with any third-party analytics, advertising,
-      or data collection services. The only external server communication occurs when you
+      or data collection services. The only communication with our own server occurs when you
       explicitly choose to export a card to Apple Wallet, at which point your card data is
-      sent to our backend server for pass signing as described above. Any diagnostic information
-      collected by Apple's built-in crash reporting (if you have opted in at the system level)
-      is handled securely through Apple's ecosystem and is anonymized.
+      sent to our backend server for pass signing as described above.
     </p>
+    <p>
+      The app relies on the following Apple services, which handle your data according to
+      <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>:
+    </p>
+    <ul style="list-style-type: disc; padding-left: 20px;">
+      <li><strong>iCloud:</strong> stores your cards and syncs them between your devices.</li>
+      <li><strong>App Store:</strong> processes purchases of Apple Wallet exports. We do not
+      receive your payment details; the app only learns that a purchase succeeded.</li>
+      <li><strong>Apple Maps:</strong> shows maps and finds places when you add a location to
+      a card, and shows the map on a card's screen. Place searches and map locations are sent
+      to Apple for this purpose.</li>
+      <li><strong>Apple Wallet:</strong> stores the passes you add to it.</li>
+      <li><strong>Siri, Shortcuts, and Spotlight:</strong> card titles are made available to
+      iOS so you can open a card by name with Siri, Shortcuts, Spotlight, or the Action
+      button.</li>
+    </ul>
 
     <h2>6. Data Storage and Security</h2>
     <p>
-      All card data is stored locally on your device using Apple's UserDefaults framework.
-      Your data remains on your device and is protected by Apple's standard security and
-      sandboxing measures. Cards are not automatically synced or backed up to iCloud or any
-      other cloud service. If you delete the app, all locally stored card data will be
-      permanently removed from your device.
+      Your cards are stored with Apple's iCloud key-value storage in your Apple Account and are
+      synced to your other devices signed in to the same Apple Account that have
+      <strong>ID Wallet</strong> installed. iCloud data is protected by Apple's security
+      measures, and we cannot access it. If you are not signed in to iCloud, your cards are
+      kept on your device. Recent-usage data, export credits, and settings are stored only on
+      your device and are protected by Apple's standard security and sandboxing measures.
+    </p>
+    <p>
+      The Home Screen and Lock Screen widgets show a copy of your cards that the app saves on
+      your device, in a storage area shared only between the app and its widgets. Widgets do
+      not connect to the internet or to iCloud. Codes shown in widgets are hidden while your
+      device is locked, and Lock Screen widgets show only a card's icon and title.
+    </p>
+    <p>
+      Cards you delete in the app are removed from iCloud. Because cards sync, a card that is
+      still on another of your devices can return from there, so delete it on each device where
+      it appears. Deleting the app removes the data stored on that device, but your cards stay
+      in your iCloud account and return if you reinstall the app; to remove them, delete your
+      cards in the app first. Unused export credits are lost when you delete the app.
     </p>
     <p>
       When you export a card to Apple Wallet, the card data is transmitted securely over HTTPS
